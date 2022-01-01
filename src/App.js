@@ -1,13 +1,34 @@
-import React, { Component } from 'react'
-import './App.css'
+import React, { Component } from "react";
 
-class App extends Component{
-  render(){
-    return(
+import "./App.css";
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      light: "off",
+    };
+  }
+
+  switch = () => {
+    this.setState({ light: "on" });
+
+    if (this.state.light === "off") {
+      // console.log("on");
+    } else {
+      this.setState({ light: "off" });
+    }
+  };
+  render() {
+    return (
       <>
-        <h1>Hello World!</h1>
+        <label className="toggle">
+          <span className="onoff">{this.state.light}</span>
+          <input type="checkbox" />
+          <span onClick={this.switch} className="slider round"></span>
+        </label>{" "}
       </>
-    )
+    );
   }
 }
-export default App
+
+export default App;
