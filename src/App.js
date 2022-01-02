@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Bulb from "./components/Bulb";
 
 import "./App.css";
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
   render() {
     return (
       <>
+        <Bulb lightOnOff={this.state.light} />
         <label className="toggle">
           <span className="onoff">{this.state.light}</span>
           <input type="checkbox" />
